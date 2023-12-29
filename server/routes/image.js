@@ -25,34 +25,6 @@ const { exec } = require('child_process');
 const imagesFolder = path.join(__dirname, '../images');
 const imagesComFolder = path.join(__dirname, '../comimages');
 
-
-
-router.get("/getdetails", async (req, res) => {
-    const newUser = new ImageModel({
-      fileName:"ksd",
-      information:{
-        "SourceFile": "/var/folders/4r/zg09k7pn2hzg71qywyxshm2w0000gn/T/wrote-60253.data",
-        "ExifToolVersion": 10.53,
-        "JFIFVersion": 1.01,
-        "ResolutionUnit": "None",
-        "XResolution": 1,
-        "YResolution": 1,
-        "ImageSize": "1280x797",
-        "Megapixels": 1
-      }
-    }
-    );
-
-    const metadata = await newUser.save();
-
-    if(!metadata){
-        return res.status(500).json({success:false,message:"Activity can not created"});
-    }
-
-    res.status(200).json({success:true,message:"Activity is added",metadata});
-
-});
-
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'images'); 
