@@ -1,7 +1,7 @@
-Image Processor
+**Image Processor**
 Overview: To process the images on the backend and send the details to the front end. 
 
-Languages:
+**Languages:**
 --> Frontend: React.js
 --> Backend: Node.js and Express.js
 --> Database: MongoDB
