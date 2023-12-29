@@ -364,7 +364,6 @@ const upload = multer({ storage: storage });
 
           const fileName = fileNames[0];
           const data = await ImageModel.find({fileName});
-          console.log(data)
           res.send({fileNames:fileNames,metadata:data})
 
 
@@ -382,7 +381,6 @@ const upload = multer({ storage: storage });
 
         const fileName = req.body.fileName;
         const data =await ImageModel.find({fileName});
-        console.log(data)
         res.send({metadata:data})
 
     } catch (error) {
